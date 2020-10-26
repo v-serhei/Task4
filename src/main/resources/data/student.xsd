@@ -22,10 +22,10 @@
         <attribute name="faculty" use="optional" default="poit">
             <simpleType>
                 <restriction base="string">
-                    <enumeration value="poit"></enumeration>
-                    <enumeration value="robotics"></enumeration>
-                    <enumeration value="ai"></enumeration>
-                    <enumeration value="ksis"></enumeration>
+                    <enumeration value="poit"/>
+                    <enumeration value="robotics"/>
+                    <enumeration value="ai"/>
+                    <enumeration value="ksis"/>
                 </restriction>
             </simpleType>
         </attribute>

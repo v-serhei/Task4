@@ -16,7 +16,7 @@ public class StudentContentHandler extends DefaultHandler {
     private static final String ELEMENT_STUDENT = StudentXmlTag.STUDENT.getValue();
 
     public StudentContentHandler() {
-        students = new HashSet<Student>();
+        students = new HashSet<>();
         tagWithText = EnumSet.range(StudentXmlTag.NAME, StudentXmlTag.STREET);
     }
 
@@ -30,15 +30,15 @@ public class StudentContentHandler extends DefaultHandler {
             //if find open tag 'student' - create new object student and fill student fields
             student = new Student();
             //if complex tag type
-            if (attributes.getLength() > 1) {
+            if (attributes.getLength() > 0) {
                 student.setFaculty(attributes.getValue(StudentXmlTag.FACULTY.getValue()));
                 student.setLogin(attributes.getValue(StudentXmlTag.LOGIN.getValue()));
-                //if simple tag type
-            } else {
-                StudentXmlTag buf = StudentXmlTag.valueOf(qName.toUpperCase());
-                if (tagWithText.contains(buf)) {
-                    currentXmlTag = buf;
-                }
+            }
+            //if simple tag type - read tag body
+        } else {
+            StudentXmlTag buf = StudentXmlTag.valueOf(qName.toUpperCase());
+            if (tagWithText.contains(buf)) {
+                currentXmlTag = buf;
             }
         }
     }
@@ -57,18 +57,32 @@ public class StudentContentHandler extends DefaultHandler {
         String data = new String(ch, start, length);
         if (currentXmlTag != null) {
             switch (currentXmlTag) {
-                case NAME:
+                case NAME: {
                     student.setName(data);
-                case TELEPHONE:
+                    break;
+                }
+                case TELEPHONE: {
                     student.setPhone(Integer.parseInt(data));
-                case STREET:
+                    break;
+                }
+                case STREET: {
                     student.getAddress().setStreet(data);
-                case CITY:
+                    break;
+                }
+                case CITY: {
                     student.getAddress().setCity(data);
-                case COUNTRY:
+                    break;
+                }
+                case COUNTRY: {
                     student.getAddress().setCountry(data);
+                    break;
+                }
             }
         }
         currentXmlTag = null;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
     }
 }

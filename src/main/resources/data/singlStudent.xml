@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<students xmlns="http://www.example.com/students">
+    <student login="student1" faculty="ai">
+        <name>StudentName1</name>
+        <telephone>1000001</telephone>
+        <address>
+            <country>country1</country>
+            <city>city1</city>
+            <street>street1</street>
+        </address>
+    </student>
+</students>

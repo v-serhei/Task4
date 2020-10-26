@@ -8,6 +8,7 @@ public class Student {
     private Address address;
 
     public Student() {
+        address = new Address();
     }
 
     public Student(String login, String name, String faculty, int phone, Address address) {
@@ -56,6 +57,30 @@ public class Student {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+
+        Student student = (Student) o;
+
+        if (phone != student.phone) return false;
+        if (!login.equals(student.login)) return false;
+        if (!name.equals(student.name)) return false;
+        if (!faculty.equals(student.faculty)) return false;
+        return address.equals(student.address);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = login.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + faculty.hashCode();
+        result = 31 * result + phone;
+        result = 31 * result + address.hashCode();
+        return result;
     }
 
     @Override

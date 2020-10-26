@@ -1,0 +1,189 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!--
+if schema is registered:
+<students xmlns:xsi="Http://www.w3c.org/2001/XMLSchema-instance"
+          xmlns="http://www.example.com/students"
+          xsi:schemaLocation = "http://www.example.com/students students.xsd">
+-->
+<students xmlns="http://www.example.com/students">
+    <student login="student1" faculty="ai">
+        <name>StudentName1</name>
+        <telephone>1000001</telephone>
+        <address>
+            <country>country1</country>
+            <city>city1</city>
+            <street>street1</street>
+        </address>
+    </student>
+    <student login="student2" faculty="ksis">
+        <name>StudentName2</name>
+        <telephone>1000002</telephone>
+        <address>
+            <country>country2</country>
+            <city>city1</city>
+            <street>street2</street>
+        </address>
+    </student>
+    <student login="student3" faculty="poit">
+        <name>StudentName3</name>
+        <telephone>1000003</telephone>
+        <address>
+            <country>country3</country>
+            <city>city3</city>
+            <street>street3</street>
+        </address>
+    </student>
+    <student login="student4" faculty="robotics">
+        <name>StudentName4</name>
+        <telephone>1000004</telephone>
+        <address>
+            <country>country4</country>
+            <city>city4</city>
+            <street>street4</street>
+        </address>
+    </student>
+    <student login="student5" faculty="ai">
+        <name>StudentName5</name>
+        <telephone>1000005</telephone>
+        <address>
+            <country>country5</country>
+            <city>city5</city>
+            <street>street5</street>
+        </address>
+    </student>
+    <student login="student6" faculty="ksis">
+        <name>StudentName6</name>
+        <telephone>1000006</telephone>
+        <address>
+            <country>country6</country>
+            <city>city6</city>
+            <street>street6</street>
+        </address>
+    </student>
+    <student login="student7" faculty="poit">
+        <name>StudentName7</name>
+        <telephone>1000007</telephone>
+        <address>
+            <country>country7</country>
+            <city>city7</city>
+            <street>street7</street>
+        </address>
+    </student>
+    <student login="student8" faculty="">
+        <name>StudentName8</name>
+        <telephone>1000008</telephone>
+        <address>
+            <country>country8</country>
+            <city>city8</city>
+            <street>street8</street>
+        </address>
+    </student>
+    <student login="student9" faculty="ai">
+        <name>StudentName9</name>
+        <telephone>1000009</telephone>
+        <address>
+            <country>country9</country>
+            <city>city9</city>
+            <street>street9</street>
+        </address>
+    </student>
+    <student login="student10" faculty="ksis">
+        <name>StudentName10</name>
+        <telephone>10000010</telephone>
+        <address>
+            <country>country10</country>
+            <city>city10</city>
+            <street>street10</street>
+        </address>
+    </student>
+    <student login="student11" faculty="poit">
+        <name>StudentName11</name>
+        <telephone>10000011</telephone>
+        <address>
+            <country>country11</country>
+            <city>city11</city>
+            <street>street11</street>
+        </address>
+    </student>
+    <student login="student12" faculty="robotics">
+        <name>StudentName12</name>
+        <telephone>10000012</telephone>
+        <address>
+            <country>country12</country>
+            <city>city12</city>
+            <street>street12</street>
+        </address>
+    </student>
+    <student login="student13" faculty="ai">
+        <name>StudentName13</name>
+        <telephone>10000013</telephone>
+        <address>
+            <country>country13</country>
+            <city>city13</city>
+            <street>street13</street>
+        </address>
+    </student>
+    <student login="student14" faculty="ksis">
+        <name>StudentName14</name>
+        <telephone>10000014</telephone>
+        <address>
+            <country>country14</country>
+            <city>city14</city>
+            <street>street14</street>
+        </address>
+    </student>
+    <student login="student15" faculty="poit">
+        <name>StudentName15</name>
+        <telephone>10000015</telephone>
+        <address>
+            <country>country15</country>
+            <city>city15</city>
+            <street>street15</street>
+        </address>
+    </student>
+    <student login="student16" faculty="robotics">
+        <name>StudentName16</name>
+        <telephone>10000016</telephone>
+        <address>
+            <country>country16</country>
+            <city>city16</city>
+            <street>street16</street>
+        </address>
+    </student>
+    <student login="student17" faculty="ai">
+        <name>StudentName17</name>
+        <telephone>10000017</telephone>
+        <address>
+            <country>country17</country>
+            <city>city17</city>
+            <street>street17</street>
+        </address>
+    </student>
+    <student login="student18" faculty="ksis">
+        <name>StudentName18</name>
+        <telephone>10000018</telephone>
+        <address>
+            <country>country18</country>
+            <city>city18</city>
+            <street>street18</street>
+        </address>
+    </student>
+    <student login="student19" faculty="poit">
+        <name>StudentName19</name>
+        <telephone>10000019</telephone>
+        <address>
+            <country>country19</country>
+            <city>city19</city>
+            <street>street19</street>
+        </address>
+    </student>
+    <student login="student20" faculty="robotics">
+        <name>StudentName20</name>
+        <telephone>10000020</telephone>
+        <address>
+            <country>country20</country>
+            <city>city20</city>
+            <street>street20</street>
+        </address>
+    </student>
+</students>
