@@ -1,6 +1,6 @@
 package com.verbitsky.task4.builder;
 
-import com.verbitsky.task4.builder.impl.StudentSaxBuilder;
+import com.verbitsky.task4.builder.impl.StudentStaxStreamBuilder;
 import com.verbitsky.task4.entity.Student;
 import com.verbitsky.task4.exception.StudentXmlException;
 import org.testng.Assert;
@@ -10,18 +10,18 @@ import org.testng.annotations.Test;
 
 import java.util.Set;
 
-public class StudentSaxBuilderTest {
+public class StudentStaxStreamBuilderTest {
     private String wrongXml = "data/wrongstudents.xml";
     private String correctXml = "data/singleStudent.xml";
     private String bigCorrectXml = "data/students.xml";
     private String xsd = "data/student.xsd";
-    private StudentSaxBuilder builder;
+    private StudentStaxStreamBuilder builder;
     private Student student;
 
 
     @BeforeClass
     public void setUp() {
-        builder = new StudentSaxBuilder();
+        builder = new StudentStaxStreamBuilder();
         student = new Student();
         student.setLogin("student1");
         student.setFaculty("ai");

@@ -1,10 +1,14 @@
-package com.verbitsky.task4.builder;
+package com.verbitsky.task4.builder.impl;
 
+import com.verbitsky.task4.builder.AbstractStudentBuilder;
 import com.verbitsky.task4.entity.Student;
-import com.verbitsky.task4.exception.CustomXmlException;
+import com.verbitsky.task4.exception.StudentXmlException;
 import com.verbitsky.task4.handler.StudentContentHandler;
 import com.verbitsky.task4.handler.StudentErrorHandler;
 import com.verbitsky.task4.validator.BaseXmlValidator;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
@@ -14,8 +18,8 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 import java.util.Set;
 
-public class StudentSaxBuilder {
-    private Set<Student> students;
+public class StudentSaxBuilder extends AbstractStudentBuilder {
+    private static Logger logger = LogManager.getLogger();
     private XMLReader reader;
     private StudentContentHandler contentHandler = new StudentContentHandler ();
     private BaseXmlValidator validator;
@@ -37,17 +41,19 @@ public class StudentSaxBuilder {
         return students;
     }
 
-    public void buildStudentSet (String xmlPath, String xsdPath) throws CustomXmlException {
+    public void buildStudentsSet(String xmlPath, String xsdPath) throws StudentXmlException {
         if (validator.validateXml(xmlPath, xsdPath)) {
             String realXmlPath = getClass().getClassLoader().getResource(xmlPath).getFile();
             try {
                 reader.parse(realXmlPath);
             } catch (SAXException | IOException e) {
-               throw new CustomXmlException("Error while parsing file"+xmlPath);
+                logger.log(Level.FATAL, "Error while parsing xml " + xmlPath, e);
+                throw new RuntimeException("Unable to parse file", e);
             }
             students = contentHandler.getStudents();
         }else {
-            throw new CustomXmlException("Received not valid xml "+xmlPath);
+            logger.log(Level.ERROR, "Error while parsing xml "+xmlPath+" cause: xml file is not valid");
+            throw new StudentXmlException("Received not valid xml "+xmlPath);
         }
     }
 }

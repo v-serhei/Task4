@@ -5,7 +5,7 @@ if schema is registered:
           xmlns="http://www.example.com/students"
           xsi:schemaLocation = "http://www.example.com/students students.xsd">
 -->
-<students xmlns="http://www.example.com/students">
+<students>
     <student login="student1" faculty="ai">
         <name>StudentName1</name>
         <telephone>1000001</telephone>
